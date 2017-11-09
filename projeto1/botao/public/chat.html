@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat Conduzir</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+		<ul class="pages">
+			<li class="chat page">
+				  <div class="col-md-12 chatArea" style="min-height:350px">
+					<ul class="messages"></ul>
+				 </div>
+				
+					<div class="col-md-12">
+						<a href="" class="btn btn-warning" quet-comprar="true"  style=""> Comprar </a>
+					</div>
+					<div class="col-md-12">
+						<input class="inputMessage" placeholder="Digite aqui..."/>
+					</div>
+			</li>
+			<li class="login page">
+				<div class="row">
+				  <div class="col-md-12 form">
+					<h3 class="title">Qual o seu apelido?</h3>
+					<input class="usernameInput" type="text" maxlength="14" />
+				  </div>
+				</div>
+			</li>
+		  </ul>
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<a href="#" class="btn btn-warning btn-lg" target="_blank" quet-comprar="true" style="display:none"> Comprar agora </a>
+		</div>	  
+	</div>	  
+	<audio id = "sonido">
+		<source src = "som1.mp3" type = "audio/mpeg" />
+	</audio>	  
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/main.js"></script>
+</body>
+</html>
