@@ -28,9 +28,9 @@ $(function() {
   function addParticipantsMessage (data) {
     var message = '';
     if (data.numUsers === 1) {
-      message += "there's 1 participant";
+      message += "1 participante conectado";
     } else {
-      message += "there are " + data.numUsers + " participants";
+      message += "" + data.numUsers + " participantes conectados";
     }
     log(message);
   }
@@ -228,7 +228,7 @@ $(function() {
   socket.on('login', function (data) {
     connected = true;
     // Display the welcome message
-    var message = "Welcome to Socket.IO Chat – ";
+    var message = "Bem vindo ao chat conduzir – ";
     log(message, {
       prepend: true
     });
