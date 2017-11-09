@@ -7,34 +7,27 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!--<ul class="pages">
-    <li class="chat page">
-      <div class="chatArea">
-        <ul class="messages"></ul>
-      </div>
-      <input class="inputMessage" placeholder="Type here..."/>
-	  <button type="button" quet-bt="true">Ligar botão</button>
-    </li>
-    <li class="login page">
-      <div class="form">
-        <h3 class="title">What's your nickname?</h3>
-        <input class="usernameInput" type="text" maxlength="14" />
-      </div>
-    </li>
-  </ul>-->
+	<div class="row">
+		<div class="col-md-12 chatArea">
+			<ul class="messages"></ul>
+		</div>	  
+	</div>	
   <div class="row">
-		<div class="col-md-12 text-center">
+		<div class="col-md-6">
+		<h4>Entre com a url completa exemplo: https://www.conduzir.com.br ou https://conduzir.com.br</h4>
+		<label>Url do botao comprar:</label><input type="text" name="url" class="form-control" />
+		</div>	  
+		<div class="col-md-6" style="padding-top:25px">
+			<div class="col-md-12" style="min-height:350px">
 			<button type="button" class="btn btn-success" quet-bt="true">Ligar botão</button>
 			<button type="button" class="btn btn-danger" style="display:none" quet-bt="false">desligar botão</button>
-		</div>	  
-	</div>	  
+			</div>
+		</div>
+	</div>
 
 
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
   <script src="/socket.io/socket.io.js"></script>
-  <script src="/main.js"></script>
-  <script>
-  
-  </script>
+  <script src="/main.js"></script> 
 </body>
 </html>

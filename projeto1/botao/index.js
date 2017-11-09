@@ -46,6 +46,23 @@ io.on('connection', function (socket) {
       numUsers: numUsers
     });
   });
+ // when the client emits 'add user', this listens and executes
+  socket.on('conect_page', function (users) {
+    if (addedUser) return;
+
+    // we store the username in the socket session for this client
+    //socket.username = username;
+    ++numUsers;
+    addedUser = true;
+    /*socket.emit('login', {
+      numUsers: numUsers
+    });*/
+    // echo globally (all clients) that a person has connected
+    socket.broadcast.emit('conect_page', {
+      //username: users.token,
+      numUsers: numUsers
+    });
+  });
 
   // when the client emits 'typing', we broadcast it to others
   socket.on('typing', function () {
@@ -53,9 +70,9 @@ io.on('connection', function (socket) {
       username: socket.username
     });
   });
-  socket.on('botao', function () {
+  socket.on('botao', function (data) {
     socket.broadcast.emit('botao', {
-      username: socket.username
+      url: data
     });
   });
   socket.on('sumir_botao', function () {
@@ -70,7 +87,6 @@ io.on('connection', function (socket) {
       username: socket.username
     });
   });
-
   // when the user disconnects.. perform this
   socket.on('disconnect', function () {
     if (addedUser) {
