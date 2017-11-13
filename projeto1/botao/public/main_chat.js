@@ -37,7 +37,8 @@ $(function() {
 
   // Sets the client's username
   function setUsername () {
-    username = cleanInput($usernameInput.val().trim());
+    //username = cleanInput($usernameInput.val().trim());//Novo usuario aqui credenciais
+    username = $('#user-name').html();//Novo usuario aqui credenciais
 
     // If the username is valid
     if (username) {
@@ -206,6 +207,15 @@ $(function() {
       }
     }
   });
+  $('[que-acao="entar"]').on('click',function(){
+		//if (username) {
+			//sendMessage();
+			//socket.emit('stop typing');
+			//typing = false;
+		//} else {
+			setUsername();
+		//}
+  });
   $inputMessage.on('input', function() {
     updateTyping();
   });
@@ -242,7 +252,7 @@ $(function() {
 
   // Whenever the server emits 'user joined', log it in the chat body
   socket.on('user joined', function (data) {
-    log(data.username + ' joined');
+    log(data.username + ' Entrou');
     addParticipantsMessage(data);
   });
 
@@ -310,9 +320,9 @@ $(function() {
   socket.on('sumir_botao', function () {
     sumirBotao();
   });  	
-	socket.on('conect_page',function(data){
-		$('.messages').html('<li>'+data.numUsers+' participantes conectados...</li>')
-	});
-	socket.emit('conect_page',{token:'teste'});	
+	//socket.on('conect_page',function(data){
+		//$('.messages').html('<li>'+data.numUsers+' participantes conectados...</li>')
+	//});
+	//socket.emit('conect_page',{token:'teste'});	
   
 });
